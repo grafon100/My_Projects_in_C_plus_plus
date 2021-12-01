@@ -28,13 +28,19 @@ int main(int argc, const char * argv[]) {
     srand(time(NULL));
     
     int size;
+    cout<<"Input size your arr: ";
     cin>>size;
     int *arr = new int[size];
     
     fillArr(arr, size);
-    
     showArr(arr, size);
     
+    
+    delete [] arr;
+    arr = nullptr;
+ 
+    
+  
     
     return 0;
 }
