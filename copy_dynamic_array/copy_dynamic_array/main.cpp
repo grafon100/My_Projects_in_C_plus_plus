@@ -54,13 +54,39 @@ int main(int argc, const char * argv[]) {
     cout<<"Input cols: ";
     cin>>cols;
     
-    int **myArr = createArr(rows, cols);
+    int **myArr1 = createArr(rows, cols);
+    int **myArr2 = createArr(rows, cols);
     
-    fillArr(myArr, rows, cols);
-    outPutArr(myArr, rows, cols);
+    fillArr(myArr1, rows, cols);
+    fillArr(myArr2, rows, cols);
+    
+    cout<<"First array:\n";
+    outPutArr(myArr1, rows, cols);
+    cout<<"Second array:\n";
+    outPutArr(myArr2, rows, cols);
+    
+    delArr(myArr1, rows);
+    
+    myArr1 = createArr(rows, cols);
     
     
-    delArr(myArr, rows);
+    for(int i = 0; i<rows; i++){
+        for(int j = 0; j<cols; j++){
+            myArr1[i][j] = myArr2[i][j];
+        }
+    }
+    
+    
+    cout<<"=========================\n";
+    
+    cout<<"First array:\n";
+    outPutArr(myArr1, rows, cols);
+    cout<<"Second array:\n";
+    outPutArr(myArr2, rows, cols);
+    
+    
+    delArr(myArr1, rows);
+    delArr(myArr2, rows);
     
     
    
