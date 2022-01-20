@@ -16,6 +16,10 @@ int main(int argc, const char * argv[]) {
     
     fstream fout;
     
+    
+    
+    
+    
     fout.open(path,ofstream::app);
     
     if(!fout.is_open()){
@@ -35,6 +39,7 @@ int main(int argc, const char * argv[]) {
     }
     
     fout.close();
+    
 
 
     return 0;
